@@ -8,7 +8,7 @@ def main():
     len_argv = len(argv) - 1
 
     if (len_argv == 1):
-        print(f"{len_argv} argument:.")
+        print(f"{len_argv} argument.")
     else:
         print(f"{len_argv} arguments:")
 
