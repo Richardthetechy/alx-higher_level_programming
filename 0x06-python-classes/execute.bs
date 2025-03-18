@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Check if a number argument is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <number>"
+  echo "  Creates a Python script named '<number>-main.py' and makes it executable."
+  exit 1
+fi
+
+# Get the number from the first command-line argument
+number="$1"
+
+# Construct the filename
+filename="${number}-main.py"
+
+# Create the file using touch
+touch "$filename"
+
+if [ $? -ne 0 ]; then
+  echo "Error: Failed to create file '$filename'"
+  exit 1
+fi
+
+echo "File '$filename' created."
+
+# Add shebang and basic Python code to the file
+
+
+if [ $? -ne 0 ]; then
+  echo "Error: Failed to write to file '$filename'"
+  exit 1
+fi
+
+# Make the file executable using chmod +x
+chmod +x "$filename"
+
+if [ $? -ne 0 ]; then
+  echo "Error: Failed to make file '$filename' executable"
+  exit 1
+fi
+
+echo "File '$filename' made executable."
+echo "Successfully created and made executable: $filename"
+
+exit 0
